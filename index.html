@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Beat Loader</title>
+    <style>
+        /* From Uiverse.io by Alderx */
+        /* heart beat */
+        .heartbeatloader {
+            position: absolute;
+            width: 10vmin;
+            height: 10vmin;
+            z-index: 9999;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff; /* Background for loader */
+        }
+
+        .svgdraw {
+            top: 30%;
+            left: 26%;
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            color: #fff;
+            transform: scale(1.4);
+            z-index: 3;
+        }
+
+        .path {
+            stroke: rgba(255, 255, 255, 0.95);
+            stroke-width: 4;
+            stroke-dasharray: 1000px;
+            stroke-dashoffset: 1000px;
+            animation: draw 1.5s infinite forwards normal linear;
+            animation-delay: 0.1s;
+            position: relative;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .innercircle {
+            position: absolute;
+            top: 17%;
+            left: 100.5%;
+            transform: translate(-50%, -50%) scale(1.2);
+            width: 160%;
+            height: auto;
+            z-index: 1;
+            opacity: 0.97;
+            animation: innerbeat 1.5s infinite linear forwards;
+        }
+
+        .innercircle:before,
+        .innercircle:after {
+            position: absolute;
+            content: "";
+            left: 25%;
+            top: 0;
+            width: 25%;
+            height: auto;
+            padding-bottom: 40%;
+            background: rgb(225, 95, 95);
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .innercircle:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes innerbeat {
+            0% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+
+            10% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+
+            60% {
+                transform: translate(-50%, -50%) scale(1.25);
+            }
+
+            75% {
+                transform: translate(-50%, -50%) scale(1.3);
+            }
+        }
+
+        .outercircle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(238, 92, 92, 0.9);
+            box-shadow: 0 0 30px 0px #fff;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.7;
+            top: 0;
+            left: 0;
+            transform: scale(1.2);
+            animation: outerbeat 1.5s infinite linear forwards;
+        }
+
+        @keyframes outerbeat {
+            0% {
+                transform: scale(1.2);
+            }
+
+            10% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+
+            60% {
+                transform: scale(1.25);
+            }
+
+            75% {
+                transform: scale(1.3);
+            }
+        }
+
+        /* Main Content Styling */
+        #content {
+            display: none; /* Initially hidden */
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        #content h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        #content p {
+            font-size: 1.5em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loader Section -->
+    <div class="heartbeatloader" id="loader">
+        <svg class="svgdraw" width="100%" height="100%" viewBox="0 0 150 400" xmlns="http://www.w3.org/2000/svg">
+            <path class="path" d="M 0 200 l 40 0 l 5 -40 l 5 40 l 10 0 l 5 15 l 10 -140 l 10 220 l 5 -95 l 10 0 l 5 20 l 5 -20 l 30 0" fill="transparent" stroke-width="4" stroke="black"></path>
+        </svg>
+        <div class="innercircle"></div>
+        <div class="outercircle"></div>
+    </div>
+    <script>
+        window.onload = function() {
+            var loader = document.getElementById("loader");
+            var content = document.getElementById("content");
+
+            if (!loader || !content) {
+                console.error("Error: Loader or content not found!");
+                return;
+            }
+
+            setTimeout(function() {
+                loader.style.display = "none"; // Hide the loader
+                content.style.display = "block"; // Show the content
+            }, 3000); // Adjust the delay (3000 ms = 3 seconds)
+        };
+    </script>
+    <!DOCTYPE html>
+<html lang="en" >
+ <div id="content">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Khulood - My Eternal Love</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: #0d0d26;
+            background-image: url('love-text-black-background-purple-lights-valentines-day-1920x1080-3419.jpg'); /* Replace with a starry background URL */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ff99cc;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #ffccff;
+        }
+
+        /* Section styles */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ff99cc;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.1rem;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #ff99cc;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #ff6699;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(255, 105, 180, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>To Khulood</h1>
+    <p>The stars shine brighter because of you, my love.</p>
+</header>
+
+<section>
+    <h2 class="section-title">A Message From My Heart</h2>
+    <div class="content">
+        <p>Khulood, you are my dream, my destiny, and my forever.
+             You make every moment of my life magical and fill my heart with unending joy.
+             This page is a small reflection of the love I have for you, limitless and eternal, just like the stars above.
+             For the past six years, my love for her has grown stronger with each passing day. From the moment I met her,
+              I knew she was special. Over time, I’ve fought countless battles, both within myself and against the world,
+               to ensure that she knows how much she means to me. Every obstacle,
+                every challenge, has only fueled my determination to stand by her side.
+                 I have worked tirelessly to be someone worthy of her love, striving to overcome all difficulties, big or small.
+                  My heart beats only for her, and I will keep fighting, through thick and thin, for as long as it takes.
+            </p>
+        <p>With all my heart, I am yours, now and always.</p>
+        <a href="https://www.instagram.com/radhwene_hrs/" class="btn">Forever Together</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 With Love, Ridwan Hars</p>
+</footer>
+</div>
+</body>
+</html>
+
+
+</body>
+</html>
 
